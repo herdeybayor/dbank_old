@@ -1,7 +1,7 @@
 import Debug "mo:base/Debug";
 
 actor DBank {
-  var currentValue = 300;
+  var currentValue: Nat = 300;
   currentValue := 100;
 
   let id = 12349275293;
@@ -20,6 +20,10 @@ actor DBank {
     } else {
       Debug.print("Insufficient fundss");
     }
+  };
+
+  public query func checkBalance(): async Nat {
+    return currentValue;
   };
 
   // topUp();
